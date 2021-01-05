@@ -6,9 +6,6 @@ export default {
             try {
                 const uid = await dispatch('GET_UID')
                 const categories = (await firebase.database().ref(`/users/${uid}/categories`).once('value')).val() || {}
-
-                const cats = []
-
                 return Object.keys(categories).map(key => ({...categories[key], id: key}))
             }
             catch (e) {
