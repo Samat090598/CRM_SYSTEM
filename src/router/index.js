@@ -59,7 +59,7 @@ const router = new VueRouter({
       component: () => import('../views/History.vue')
     },
     {
-      path: '/detail',
+      path: '/detail/:id',
       name: 'detail',
       meta: {layout: 'main', auth: true},
       component: () => import('../views/DetailRecord.vue')
